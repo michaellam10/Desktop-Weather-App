@@ -14,17 +14,17 @@ $(window).resize(function() {
   }
 })
 
-$('body').on('click touchstart', function(e) {
-  if ($('.portfolio-modal').hasClass('post-transition')) {
-    $('.portfolio-modal').removeClass('post-transition');
-    $('.portfolio-modal').children('.modal-content').removeClass('post-transition');
-  }
-});
+// $('body').on('click touchstart', function(e) {
+//   if ($('.portfolio-modal').hasClass('post-transition')) {
+//     $('.portfolio-modal').removeClass('post-transition');
+//     $('.portfolio-modal').children('.modal-content').removeClass('post-transition');
+//   }
+// });
 
 /* Get Geolocation of Browser */
 
 $(document).ready(function(){
-    
+
     $.ajax({
         url: "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyARTr-Vc9311XXIL2eZ5qq2OGZ7d72uZGE",
         type: "POST",
@@ -36,17 +36,17 @@ $(document).ready(function(){
         }
     }
   );
-  
+
   $("#map").hide();
   //$("#map").fadeIn(2000);
-  
+
 });
 
 
 // Takes location input and formats location based off of input location coordinates
 
 var getReadableLocation = function(latitude, longitude) {
-    
+
     $.ajax({
         url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyARTr-Vc9311XXIL2eZ5qq2OGZ7d72uZGE`,
 
@@ -56,16 +56,16 @@ var getReadableLocation = function(latitude, longitude) {
             var readableLocation = null;
             var index = null;
             for(var i = 0; i<formatOptions; i++) {
-                
+
                 var typesSize = data.results[i].types.length;
-                
+
                 for (var j = 0; j<typesSize; j++) {
                     if (data.results[i].types[j] == "locality"){
                         index = i;
                     }
                 }
             }
-            
+
             if(index == null){
                 readableLocation = "Cannot Find Location";
             }
@@ -73,7 +73,7 @@ var getReadableLocation = function(latitude, longitude) {
                 readableLocation = data.results[index].formatted_address;
                 //getPlaceInformation(readableLocation);
             }
-            
+
             $("h2.location-title").html(readableLocation);
             $(".title h1").html(readableLocation);
         }
@@ -81,7 +81,7 @@ var getReadableLocation = function(latitude, longitude) {
 };
 
 /*var getPlaceInformation = function(location){
-    
+
     $.ajax({
         url: `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${location}&key=AIzaSyARTr-Vc9311XXIL2eZ5qq2OGZ7d72uZGE`,
         type: "POST",
@@ -95,7 +95,7 @@ var getReadableLocation = function(latitude, longitude) {
 /* Get geolocation of input location */
 
 var getCoordinateLocation = function(location) {
-    
+
         $.ajax({
                 url: `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=AIzaSyARTr-Vc9311XXIL2eZ5qq2OGZ7d72uZGE`,
                 success: function(data){
@@ -133,7 +133,7 @@ var getWeather = function(coordinates) {
 /* Obtains date + time at current / request location */
 
 var getTime = function(unixTimestamp, timezone) {
-    
+
     var time = moment.tz(timezone).format("LT");
     var currentTime = new Date(unixTimestamp*1000);
     var numWeekday = currentTime.getDay(); // Numeric day in the week [0, 1, 2, ... , 6]
@@ -148,9 +148,9 @@ var getTime = function(unixTimestamp, timezone) {
 /* Receives numeric month and returns month name */
 
 var getMonthName = function(numMonth) {
-    
+
     var currentMonth = null;
-    
+
     switch(numMonth) {
         case 0:
             currentMonth = "January";
@@ -199,18 +199,18 @@ var getMonthName = function(numMonth) {
 /* Insert updated day names into display */
 
 var displayUpdatedDayNames = function(unixTimestamp, timezone){
-    
+
     var formattedTime = getTime(unixTimestamp, timezone);
     var date = formattedTime[2];
     var month = formattedTime[3];
     var otherdaysNames = otherDays(formattedTime[1]); // Array of updated day names beginning with today
-    
+
     for(var i = 0; i<7; i++){
-        
+
         var numDay = i+1;
         var stringDay = numDay.toString();
         var day = "#day" + stringDay;
-        
+
         if(numDay === 1){ // Check if today in order to put current day in location-info
             $(".location-date h2").replaceWith("<h2></h2>").addClass("location-date");
             $(".location-date h2").append(otherdaysNames[i] + ", " + month + " " + date);
@@ -225,9 +225,9 @@ var displayUpdatedDayNames = function(unixTimestamp, timezone){
 /* Converts day number to day name */
 
 var currentDayName = function(day){
-    
+
     var today = null;
-    
+
     switch(day){
         case 1:
             today = "Monday";
@@ -258,7 +258,7 @@ var currentDayName = function(day){
 /* Obtains day names for the week */
 
 var otherDays = function(today){
-    
+
     var tomorrow = today+1;
     var day1 = currentDayName(today);
     var day2 = getNextDayName(tomorrow);
@@ -269,17 +269,17 @@ var otherDays = function(today){
     var day7 = getNextDayName(day6[1]);
     var dayNames = [day1, day2[0], day3[0], day4[0], day5[0], day6[0], day7[0]];
     return dayNames;
-    
+
 }
 
 /* Obtains day name of the inputted numeric day of the week */
 
 var getNextDayName = function(index){
-    
+
         var temp = index;
         var day = null;
         var next = null;
-        
+
         // if((temp-6)<=0){
         //     if(temp===1){
         //         next = "Mon";
@@ -307,7 +307,7 @@ var getNextDayName = function(index){
         // temp++;
         // var day = [next, temp];
         // return day;
-        
+
         if(index>6) {
             next="Sun";
             index=0;
@@ -345,7 +345,7 @@ var weatherInfo = function(weather) {
     var feltTemperature = Math.round(weather.currently.apparentTemperature);
     var highTemp = Math.round(weather.daily.data[0].temperatureMax);
     var lowTemp = Math.round(weather.daily.data[0].temperatureMin);
-    
+
     $(".actual").html("").append(actualTemperature).append('&#176;');
     $(".felt").html("Feels like:   ").append(feltTemperature).append('&#176;' + " F").css({"color": "#D3D3D3", "font-size":"12px"});
     $(".high").html("High:   ").append(highTemp).append("&#176;" + " F").css({"color": "#D3D3D3", "font-size":"12px"});
@@ -353,13 +353,13 @@ var weatherInfo = function(weather) {
 }
 
 var weatherInfo_Week = function(weeklyData) {
-    
+
     for(var i = 0; i<6; i++){
         var tempMax = weeklyData[i+1].temperatureMax;
         var tempMin = weeklyData[i+1].temperatureMin;
-        
+
         var numDay = i+2;
-        
+
         var stringNumDay = numDay.toString()
         var specificDay = "#day" + stringNumDay;
         $(specificDay + " .max-temp h4:first").replaceWith("<h4></h4>");
@@ -372,16 +372,16 @@ var weatherInfo_Week = function(weeklyData) {
 /* Obtains weather conditions for the day */
 
 var displayWeekIcons = function(data){
-    
+
     var currentIcon = data.currently.icon;
-    
+
     for(var i = 0; i<7; i++){
         var numDay = i+1;
         var stringDay = numDay.toString();
         var day = "#day" + stringDay + " .weather-icon i";
-        
+
         var icon = data.daily.data[i].icon;
-        
+
         if(numDay === 1){
             $(".today .weather-icon i").replaceWith("<i></i>");
             $(".today .weather-icon i").addClass(getWeatherIcon(currentIcon));;
@@ -396,7 +396,7 @@ var displayWeekIcons = function(data){
 /* Associates weather conditions with weather icons */
 
 var getWeatherIcon = function(icon) {
-    
+
     var answer = null;
     switch(icon){
         case "clear-day":
@@ -441,7 +441,7 @@ var getWeatherDescription= function(data) {
 // Get User Input from Search Bar
 
 $("#search-bar").keypress(function(event) {
-    
+
     if(event.which == 13)  {
         var location = document.getElementById("search-bar").value;
         getCoordinateLocation(location);
@@ -465,5 +465,4 @@ $("#map-button").click(function(){
 
 
 
-   // function initMap() 
-    
+   // function initMap()
