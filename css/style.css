@@ -65,21 +65,6 @@
       @media screen and (max-width: 550px) {
         .portfolio-modal .modal-content p {
           font-size: 15px; } }
-    .portfolio-modal .modal-content a {
-      color: #eee;
-      text-decoration: none;
-      -webkit-transition: 0.1s;
-      -o-transition: 0.1s;
-      transition: 0.1s;
-      font-weight: bold;
-      display: block;
-      font-family: sans-serif; }
-      .portfolio-modal .modal-content a:hover {
-        color: #666666;
-        -webkit-transition: 0.1s;
-        -o-transition: 0.1s;
-        transition: 0.1s;
-        cursor: pointer !important; }
     .portfolio-modal .modal-content.post-transition {
       -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
@@ -88,6 +73,9 @@
       -webkit-transition: 0.5s ease-out;
       -o-transition: 0.5s ease-out;
       transition: 0.5s ease-out; }
+      @media screen and (max-width: 550px) {
+        .portfolio-modal .modal-content.post-transition {
+          transform: translateY(-100px); } }
 
 body {
     color: white;
