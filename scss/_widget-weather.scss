@@ -1,0 +1,246 @@
+/* Lower third with weather information */
+
+.widget-weather {
+  // height: calc(100% / 3);
+  // background-color: rgba(0,0,0,0.7);
+  // border-bottom-left-radius: 10px;
+  // border-bottom-right-radius: 10px;
+  display: none;
+   
+   &.selected {
+     display: flex;
+   }
+  
+}
+
+.today {
+   width: 40%;
+   height: 100%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   .left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      
+      .actual {
+         font-size: 75px;
+         margin-bottom: 0px;
+         padding-bottom: 0;
+         height: 75px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .felt {
+         font-style: italic;
+         text-align: left;
+         margin-bottom: 15px;
+         padding-left: 5px;
+      }
+
+      .high {
+         text-align: left;
+      }
+
+      .low {
+         text-align: left;
+      }
+   }
+   
+   .right {
+      // width: 30%;
+      margin-left: 20px;
+      margin-bottom: 11px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+.rest-of-week {
+   width: 60%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   .other-day {
+      width: 16.666%;
+      text-align: center;
+      height: 80%;
+      border-left: solid 1px rgba(179,179,179,0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      .day-of-the-week {
+         width: 60px;
+         border-radius: 15px;
+         background-color: rgba(0,0,0,0.7);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 25px;
+         margin-bottom: 10px;
+      }
+   }
+}
+
+.other-day h4 {
+   margin: 0;
+}
+
+.temperature {
+   text-align: center;
+   
+   .max-temp {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+   }
+   
+   .min-temp {
+      display: flex;
+      justify-content: center;
+      color: #626262;
+   }
+}
+
+.today .wi {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   text-align: center;
+   transform: scale(3,3);
+   transform-origin: center;
+}
+
+.today .weather-description {
+   margin-top: 25px;
+   text-align: center;
+}
+
+.today h2 {
+   margin-top: 0;
+}
+
+.day-of-the-week h3 {
+ padding-top: 3px;
+   font-weight: 300;
+   text-transform: uppercase;
+   font-size: 14px;
+  
+}
+
+.degree {
+   margin-left: 2px;
+}
+
+.high, .low {
+   margin: 0;
+   padding-left: 5px;
+}
+
+@media screen and (max-width: 1279px) {
+  .widget-weather {
+    flex-direction: column;
+    
+    .today {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 40px;
+    }
+    
+    .rest-of-week {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      width: 100%;
+      overflow-x: scroll;
+      
+      @media screen and (max-width: 700px) {
+        flex-direction: column;
+      }
+      
+      .other-day {
+        border-left: 0;
+        border-top: solid 1px rgba(179,179,179,0.4);
+        // width: calc(100% / 3);
+        width: 50%;
+        height: 150px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 25px;
+        padding-right: 25px;
+        
+        @media screen and (max-width: 1000px) {
+          width: 50%;
+        }
+        
+        @media screen and (max-width: 700px) {
+          width: 100%;
+        }
+        
+        @media screen and (max-width: 500px) {
+          padding-top: 25px;
+          padding-bottom: 25px;
+          flex-direction: column;
+        }
+        
+        > div {
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+        
+        .day-of-the-week {
+          margin-bottom: 0;
+          margin-left: 25px;
+          margin-right: 25px;
+          width: auto;
+          padding: 6px 20px;
+          background-color: rgba(0, 0, 0, 0.4);
+          
+          h3 {
+            font-size: 20px;
+            font-weight: 500;
+          }
+        }
+        
+        .weather-icon {
+          margin-top: 15px;
+          margin-bottom: 5px;
+          
+          i {
+            font-size: 30px;
+          }
+          
+          @media screen and (max-width: 500px) {
+            margin-bottom: 8px;
+          }
+        }
+        
+        
+        .temperature {
+          // margin-bottom: 10px;
+          
+          .max-temp h4:first-child:before {
+            content: 'High: ';
+            font-weight: 400;
+          }
+          
+          .min-temp h4:first-child:before {
+            content: 'Low: ';
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+

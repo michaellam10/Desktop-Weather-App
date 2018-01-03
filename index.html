@@ -3,215 +3,211 @@
     <head>
       <meta charset="utf-8">
       <title>Weather App</title>
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/weather-app.css">
       <link href="https://fonts.googleapis.com/css?family=Khula:300,400" rel="stylesheet">
-      <link href="css/weather-icons.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-    <div class="portfolio-modal">
-    <div class="modal-content">
-      <h1>Notice</h1>
-      <p>Please note that this application has not been optimized for tablet or mobile devices, therefore mobile viewing has been disabled. It's objective was simply to play around with the Dark Sky API.</p>
-    </div>
-  </div>
-    <div class="body">
-      <div class="main">
-        <div class="feature">
-          <div class="main-info">
-            <div class="title">
-                <h1>Weather IO</h1>
-            </div>
-            <!--<div class="haha">-->
-            <div class="location-info">
-                <i class="fa fa-map-marker fa-4x" aria-hidden="true"></i>
-                <div class="location-date"><h2>Current Date</h2></div>
-                <div class="location-time"><h2>Current Time</h2></div>
-            </div>
-            <!--</div>-->
+      <div class="portfolio-modal">
+        <div class="modal-content">
+          <h1>Notice</h1>
+          <p>Please note that this application has not been optimized for tablet or mobile devices, therefore mobile viewing has been disabled. It's objective was simply to play around with the Dark Sky API.</p>
         </div>
-
-        <div class="nav">
-            <div class="feature-buttons" id="weather-button">
-                <button class="nav-button" >
-                    <i class="fa fa-sun-o fa-2x" aria-hidden="true"></i>
-                    <h2>Weather</h2>
-                </button>
+      </div>
+      <main class="weather-app">
+        <div class="background-image">
+          <img src="media/MountainRain.jpg"alt="Background Image" />
+        </div>
+        <div class="widget">
+          <div class="widget-dashboard">
+            <div class="dashboard-header">
+              <div class="title">
+                  <h1>Weather IO</h1>
+              </div>
+              <div class="location-info">
+                  <i class="fa fa-map-marker fa-4x" aria-hidden="true"></i>
+                  <div class="location-date"><h2>Current Date</h2></div>
+                  <div class="location-time"><h2>Current Time</h2></div>
+              </div>
             </div>
-            <div class="feature-buttons" id="map-button">
-                <button class="nav-button">
-                    <i class="fa fa-map-o fa-2x" aria-hidden="true"></i>
-                    <h2>Map</h2>
-                </button>
-            </div>
-            <div class="feature-buttons" id="gallery-button">
-                <button class="nav-button">
-                    <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
-                    <h2>Gallery</h2>
-                </button>
+            <div class="nav">
+              <div class="nav-item active" id="weather-button">
+                <div class="nav-item-border" id="top"></div>
+                <i class="fa fa-sun-o fa-2x" aria-hidden="true"></i>
+                <h2>Weather</h2>
+                <div class="nav-item-border" id="bottom"></div>
+              </div>
+              <div class="nav-item" id="map-button">
+                <div class="nav-item-border" id="top"></div>
+                <i class="fa fa-map-o fa-2x" aria-hidden="true"></i>
+                <h2>Map</h2>
+                <div class="nav-item-border" id="bottom"></div>
+              </div>
+              <div class="nav-item" id="gallery-button">
+                <div class="nav-item-border" id="top"></div>
+                <i class="fa fa-picture-o fa-2x" aria-hidden="true"></i>
+                <h2>Gallery</h2>
+                <div class="nav-item-border" id="bottom"></div>
+              </div>
             </div>
             <div class="search">
-              <input class="search" id="search-bar" type="text" placeholder="Type Destination then press Enter"></input>
+              <input id="search-bar" type="text" placeholder="Type Destination then press Enter"></input>
+              <div class="search-bar-border"></div>
             </div>
+          </div>
+          <div class="widget-content">
+              <div class="widget-weather selected">
+                <div class="today" id="day1">
+                   <div class="left">
+                    <div class="temperature">
+                      <div class="felt"></div>
+                      <div class="actual"></div>
+                      <div class="high"></div>
+                      <div class="low"></div>
+                    </div>
+                   </div>
+                   <div class="right">
+                    <div class="day-of-the-week">
+                      <h2>Today</h2>
+                    </div>
+                    <div class="weather-icon">
+                      <i></i>
+                    </div>
+                    <div class="weather-description">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="rest-of-week">
+                    <div class="other-day" id="day2">
+                        <div class="day-of-the-week">
+                          <h3></h3>
+                        </div>
+                        <div class="weather-icon">
+                          <i></i>
+                        </div>
+                        <div class="temperature">
+                            <div class="max-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                            <div class="min-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-day" id="day3">
+                        <div class="day-of-the-week">
+                          <h3></h3>
+                        </div>
+                        <div class="weather-icon">
+                          <i></i>
+                        </div>
+                        <div class="temperature">
+                            <div class="max-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                            <div class="min-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-day" id="day4">
+                        <div class="day-of-the-week">
+                          <h3></h3>
+                        </div>
+                        <div class="weather-icon">
+                          <i></i>
+                        </div>
+                        <div class="temperature">
+                            <div class="max-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                            <div class="min-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-day" id="day5">
+                        <div class="day-of-the-week">
+                          <h3></h3>
+                        </div>
+                        <div class="weather-icon">
+                          <i></i>
+                        </div>
+                        <div class="temperature">
+                            <div class="max-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                            <div class="min-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-day" id="day6">
+                        <div class="day-of-the-week">
+                          <h3></h3>
+                        </div>
+                        <div class="weather-icon">
+                          <i></i>
+                        </div>
+                        <div class="temperature">
+                            <div class="max-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                            <div class="min-temp">
+                                <h4></h4>
+                                <h4>&deg; F</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-day" id="day7">
+                        <div class="day-of-the-week">
+                          <h3></h3>
+                        </div>
+                        <div class="weather-icon">
+                          <i></i>
+                        </div>
+                        <div class="temperature">
+                            <div class="max-temp">
+                                <h4></h4>
+                              <h4>&deg; F</h4>
+                            </div>
+                            <div class="min-temp">
+                              <h4></h4>
+                              <h4>&deg; F</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="widget-map">
+                <p>This feature is not yet available. Check back here soon!</p>
+              </div>
+              <div class="widget-gallery">
+                <p>This feature is not yet available. Check back here soon!</p>
+              </div>
+          </div>
         </div>
-      </div>
-
-      <div class="weather">
-          <div class="today" id="day1">
-             <div class="left">
-              <div class="temperature">
-                <div class="felt"></div>
-                <div class="actual"></div>
-
-                <div class="high"></div>
-                <div class="low"></div>
-              </div>
-            </div>
-            <div class="right">
-              <div class="day-of-the-week">
-                <h2>Today</h2>
-              </div>
-              <div class="weather-icon">
-                <i></i>
-              </div>
-              <div class="weather-description">
-                <p></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="rest-of-week">
-              <div class="other-day" id="day2">
-
-                  <div class="day-of-the-week">
-                    <h3></h3>
-                  </div>
-                  <div class="weather-icon">
-                    <i></i>
-                  </div>
-                  <div class="temperature">
-                      <div class="max-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                      <div class="min-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                  </div>
-              </div>
-              <div class="other-day" id="day3">
-
-                  <div class="day-of-the-week">
-                    <h3></h3>
-                  </div>
-                  <div class="weather-icon">
-                    <i></i>
-                  </div>
-                  <div class="temperature">
-                      <div class="max-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                      <div class="min-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                  </div>
-              </div>
-              <div class="other-day" id="day4">
-
-                  <div class="day-of-the-week">
-                    <h3></h3>
-                  </div>
-                  <div class="weather-icon">
-                    <i></i>
-                  </div>
-                  <div class="temperature">
-                      <div class="max-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                      <div class="min-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                  </div>
-              </div>
-              <div class="other-day" id="day5">
-
-                  <div class="day-of-the-week">
-                    <h3></h3>
-                  </div>
-                  <div class="weather-icon">
-                    <i></i>
-                  </div>
-                  <div class="temperature">
-                      <div class="max-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                      <div class="min-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                  </div>
-              </div>
-              <div class="other-day" id="day6">
-
-                  <div class="day-of-the-week">
-                    <h3></h3>
-                  </div>
-                  <div class="weather-icon">
-                    <i></i>
-                  </div>
-                  <div class="temperature">
-                      <div class="max-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                      <div class="min-temp">
-                          <h4></h4>
-                          <h4>&deg F</h4>
-                      </div>
-                  </div>
-              </div>
-              <div class="other-day" id="day7">
-
-                  <div class="day-of-the-week">
-                    <h3></h3>
-                  </div>
-                  <div class="weather-icon">
-                    <i></i>
-                  </div>
-                  <div class="temperature">
-                      <div class="max-temp">
-                          <h4></h4>
-                        <h4>&deg F</h4>
-                      </div>
-                      <div class="min-temp">
-                        <h4></h4>
-                        <h4>&deg F</h4>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-      </div>
-
-
-
-
-
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="https://use.fontawesome.com/3a0840bb73.js"></script>
-    <script src="moment.js"></script>
-    <script src="moment-timezone-with-data.js"></script>
-        <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARTr-Vc9311XXIL2eZ5qq2OGZ7d72uZGE">
-    </script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARTr-Vc9311XXIL2eZ5qq2OGZ7d72uZGE&libraries=places"></script>
-    <script src="weather.js"></script>
-
+      </main>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+      <script src="https://use.fontawesome.com/3a0840bb73.js"></script>
+      <script src="moment.js"></script>
+      <script src="moment-timezone-with-data.js"></script>
+          <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARTr-Vc9311XXIL2eZ5qq2OGZ7d72uZGE">
+      </script>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARTr-Vc9311XXIL2eZ5qq2OGZ7d72uZGE&libraries=places"></script>
+      <script src="js/weather.js"></script>
+      <script src="js/borders.js"></script>
+      <script src="js/navigation.js"></script>
     </body>
 </html>

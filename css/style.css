@@ -1,112 +1,4 @@
-.portfolio-modal {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: -1;
-  opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-transition: 0.2s ease-out;
-  -o-transition: 0.2s ease-out;
-  transition: 0.2s ease-out; }
-  .portfolio-modal.post-transition {
-    z-index: 100;
-    opacity: 1;
-    -webkit-transition: 0.2s ease-out;
-    -o-transition: 0.2s ease-out;
-    transition: 0.2s ease-out; }
-  .portfolio-modal .modal-content {
-    width: 670px;
-    background-color: rgba(0, 0, 0, 0.65);
-    padding: 40px 30px;
-    -webkit-transform: translateY(-200px);
-    -ms-transform: translateY(-200px);
-    transform: translateY(-200px);
-    opacity: 0;
-    -webkit-transition: 0.2s ease-out;
-    -o-transition: 0.2s ease-out;
-    transition: 0.2s ease-out;
-    text-align: center;
-    border-radius: 5px; }
-    @media screen and (max-width: 800px) {
-      .portfolio-modal .modal-content {
-        width: 80vw; } }
-    @media screen and (max-width: 550px) {
-      .portfolio-modal .modal-content {
-        width: 90vw; } }
-    .portfolio-modal .modal-content h1 {
-      color: white;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #323232;
-      font-family: 'MaisonNeue-Medium', sans-serif;
-      margin-top: 0;
-      margin-bottom: 30px;
-      font-size: 40px; }
-      @media screen and (max-width: 800px) {
-        .portfolio-modal .modal-content h1 {
-          font-size: 35px; } }
-    .portfolio-modal .modal-content p {
-      color: white;
-      text-align: center;
-      letter-spacing: 0.1px;
-      font-size: 16px;
-      line-height: 30px;
-      font-family: sans-serif !important; }
-      @media screen and (max-width: 550px) {
-        .portfolio-modal .modal-content p {
-          font-size: 15px; } }
-    .portfolio-modal .modal-content.post-transition {
-      -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-      transform: translateY(0);
-      opacity: 1;
-      -webkit-transition: 0.5s ease-out;
-      -o-transition: 0.5s ease-out;
-      transition: 0.5s ease-out; }
-      @media screen and (max-width: 550px) {
-        .portfolio-modal .modal-content.post-transition {
-          transform: translateY(-100px); } }
-
-body {
-    color: white;
-    background-image: url("MountainRain.jpg"); /* Change to have live feed update of actual city*/
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Khula', sans-serif;
-    width: 100vw;
-    height: 100vh;
-}
-
-h1 {
-    font-size: 50px;
-    color: white;
-}
-
-.body {
-    width: 1150px;
-    height: 600px;
-    background-color: rgba(0,0,0,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main {
-    /*width: 1150px;
-    height: 600px;*/
+.widget {
     width: 100%;
     height: 100%;
     display: block;
@@ -114,7 +6,7 @@ h1 {
 
 /* Upper two-thirds with header image */
 
-.feature {
+.widget-dashboard {
     background-color: rgba(0,0,0,0.5);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -292,7 +184,7 @@ button {
 
  /* Lower third with weather informatoin */
 
-.weather {
+.widget-weather {
     height: 200px;
     background-color: rgba(0,0,0,0.7);
     border-bottom-left-radius: 10px;
@@ -440,7 +332,6 @@ button {
 }
 
 #map {
-
     margin: 0 auto;
     width: 500px;
     height: 500px;

@@ -1,0 +1,18 @@
+.widget-gallery {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  
+  &.selected {
+    display: flex;
+  }
+  
+  p {
+    font-weight: 300;
+  }
+  
+  @media screen and (max-width: 1000px) {
+    min-height: 180px;
+  }
+}
