@@ -146,7 +146,7 @@ h1 {
       line-height: 1.2; }
       @media screen and (max-width: 700px) {
         .dashboard-header .title h1 {
-          font-size: 40px; } }
+          font-size: 45px; } }
       @media screen and (max-width: 500px) {
         .dashboard-header .title h1 {
           font-size: 35px; } }
@@ -170,6 +170,11 @@ h1 {
       .dashboard-header .location-info {
         position: absolute;
         bottom: 62.8px;
+        right: 40px; } }
+    @media screen and (max-width: 500px) {
+      .dashboard-header .location-info {
+        position: absolute;
+        bottom: 50px;
         right: 40px; } }
     @media screen and (max-width: 500px) {
       .dashboard-header .location-info i {
