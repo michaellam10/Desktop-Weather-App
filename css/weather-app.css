@@ -152,7 +152,7 @@ h1 {
           font-size: 35px; } }
   .dashboard-header .location-info {
     padding-top: 5px;
-    min-width: 113.52px;
+    min-width: 160px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -520,11 +520,17 @@ h1 {
         border-left: 0;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        width: 50%;
-        min-width: 50%;
+        width: calc(100% / 3);
+        min-width: calc(100% / 3);
         height: 100%;
         padding-left: 25px;
-        padding-right: 25px; }
+        padding-right: 25px; } }
+      @media screen and (max-width: 1279px) and (max-width: 1000px) {
+        .widget-weather .rest-of-week .other-day {
+          width: 50%;
+          min-width: 50%; } }
+
+@media screen and (max-width: 1279px) {
         .widget-weather .rest-of-week .other-day .day-of-the-week {
           margin-bottom: 0;
           width: auto;
