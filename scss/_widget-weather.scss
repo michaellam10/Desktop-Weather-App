@@ -167,7 +167,7 @@
       justify-content: flex-start;
       width: 100%;
       padding-top: 30px;
-      padding-bottom: 20px;
+      padding-bottom: 30px;
       overflow-x: scroll;
       border-top: solid 1px rgba(179,179,179,0.4);
       // @media screen and (max-width: 700px) {
@@ -177,11 +177,8 @@
       .other-day {
         border-left: 0;
         box-sizing: border-box;
-        // width: calc(100% / 3);
         width: 50%;
-        height: 150px;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        height: 100%;
         padding-left: 25px;
         padding-right: 25px;
         
@@ -193,11 +190,11 @@
         //   width: 100%;
         // }
         
-        @media screen and (max-width: 500px) {
-          padding-top: 25px;
-          padding-bottom: 25px;
-          flex-direction: column;
-        }
+        // @media screen and (max-width: 500px) {
+        //   padding-top: 25px;
+        //   padding-bottom: 25px;
+        //   flex-direction: column;
+        // }
         
         > div {
           margin-left: 20px;

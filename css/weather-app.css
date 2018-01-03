@@ -512,7 +512,7 @@ h1 {
       justify-content: flex-start;
       width: 100%;
       padding-top: 30px;
-      padding-bottom: 20px;
+      padding-bottom: 30px;
       overflow-x: scroll;
       border-top: solid 1px rgba(179, 179, 179, 0.4); }
       .widget-weather .rest-of-week .other-day {
@@ -520,21 +520,9 @@ h1 {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         width: 50%;
-        height: 150px;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        height: 100%;
         padding-left: 25px;
-        padding-right: 25px; } }
-      @media screen and (max-width: 1279px) and (max-width: 500px) {
-        .widget-weather .rest-of-week .other-day {
-          padding-top: 25px;
-          padding-bottom: 25px;
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-          flex-direction: column; } }
-
-@media screen and (max-width: 1279px) {
+        padding-right: 25px; }
         .widget-weather .rest-of-week .other-day > div {
           margin-left: 20px;
           margin-right: 20px; }
