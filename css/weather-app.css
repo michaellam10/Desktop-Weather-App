@@ -514,6 +514,7 @@ h1 {
       padding-top: 30px;
       padding-bottom: 30px;
       overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
       border-top: solid 1px rgba(179, 179, 179, 0.4); }
       .widget-weather .rest-of-week .other-day {
         border-left: 0;
