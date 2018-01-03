@@ -1,25 +1,3 @@
-// const mq = window.matchMedia( "(max-width: 1279px)" );
-// 
-// $(document).ready(function() {
-//   if(mq.matches) {
-//     $('.portfolio-modal').addClass('post-transition');
-//     $('.portfolio-modal').children('.modal-content').addClass('post-transition');
-//   }
-// });
-// 
-// $(window).resize(function() {
-//   if(mq.matches) {
-//     $('.portfolio-modal').addClass('post-transition');
-//     $('.portfolio-modal').children('.modal-content').addClass('post-transition');
-//   }
-// })
-
-// $('body').on('click touchstart', function(e) {
-//   if ($('.portfolio-modal').hasClass('post-transition')) {
-//     $('.portfolio-modal').removeClass('post-transition');
-//     $('.portfolio-modal').children('.modal-content').removeClass('post-transition');
-//   }
-// });
 
 /* Get Geolocation of Browser */
 
