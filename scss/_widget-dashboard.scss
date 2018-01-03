@@ -8,7 +8,7 @@
   position: relative;
   
   @media screen and (max-width: 500px) {
-    min-height: 300px;
+    min-height: 275px;
   }
 }
 
@@ -18,8 +18,16 @@
   align-items: flex-start;
   padding: 50px;
   
+  @media screen and (max-width: 500px) {
+    padding: 40px;
+  }
+  
   .title {
     margin-right: 50px;
+    
+    @media screen and (max-width: 500px) {
+      margin-right: 0;
+    }
     
     h1 {
       line-height: 1.2;
@@ -106,15 +114,19 @@
       width: 100%;
     }
     
+    @media screen and (max-width: 500px) {
+      height: 50px;
+    }
+    
     i {
       margin-right: 10px;
       font-size: 20px;
       
       // display: none;
       // 
-      // @media screen and (max-width: 500px) {
-      //   display: block;
-      // }
+      @media screen and (max-width: 500px) {
+        margin-right: 0;
+      }
     }
 
     h2 {

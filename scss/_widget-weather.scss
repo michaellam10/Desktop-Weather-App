@@ -156,6 +156,10 @@
       width: 100%;
       padding-top: 50px;
       padding-bottom: 40px;
+      
+      @media screen and (max-width: 1000px) {
+        padding-top: 0;
+      }
     }
     
     .rest-of-week {
