@@ -115,6 +115,9 @@ h1 {
   height: calc(100% / 3 * 2);
   min-height: 400px;
   position: relative; }
+  @media screen and (max-width: 500px) {
+    .widget-dashboard {
+      min-height: 300px; } }
 
 .dashboard-header {
   display: -webkit-box;
@@ -134,6 +137,9 @@ h1 {
       @media screen and (max-width: 700px) {
         .dashboard-header .title h1 {
           font-size: 40px; } }
+      @media screen and (max-width: 500px) {
+        .dashboard-header .title h1 {
+          font-size: 35px; } }
   .dashboard-header .location-info {
     padding-top: 5px;
     min-width: 113.52px;
@@ -155,20 +161,24 @@ h1 {
         position: absolute;
         bottom: 62.8px;
         right: 40px; } }
+    @media screen and (max-width: 500px) {
+      .dashboard-header .location-info i {
+        font-size: 2.5em; } }
     .dashboard-header .location-info h2 {
       font-size: 14px;
-      font-weight: normal; }
+      font-weight: normal;
+      margin: 0; }
+      @media screen and (max-width: 500px) {
+        .dashboard-header .location-info h2 {
+          font-size: 13px;
+          line-height: 1.4; } }
     .dashboard-header .location-info .location-date {
       margin-top: 10px;
       margin-bottom: 2px;
       text-align: right; }
-      .dashboard-header .location-info .location-date h2 {
-        margin: 0; }
     .dashboard-header .location-info .location-time {
       margin-top: 2px;
       text-align: right; }
-      .dashboard-header .location-info .location-time h2 {
-        margin: 0; }
 
 .nav {
   display: -webkit-box;
@@ -209,6 +219,9 @@ h1 {
       margin-top: 6px;
       font-weight: 300;
       font-size: 18px; }
+      @media screen and (max-width: 500px) {
+        .nav .nav-item h2 {
+          display: none; } }
     .nav .nav-item:hover {
       cursor: pointer; }
 
@@ -226,6 +239,9 @@ h1 {
   @media screen and (max-width: 1000px) {
     .search {
       width: 100%; } }
+  @media screen and (max-width: 500px) {
+    .search {
+      height: 50px; } }
   .search #search-bar {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -266,6 +282,17 @@ h1 {
     @media screen and (max-width: 1000px) {
       .search #search-bar {
         text-align: left; } }
+    @media screen and (max-width: 500px) {
+      .search #search-bar {
+        font-size: 17px; }
+        .search #search-bar::-webkit-input-placeholder {
+          font-size: 17px; }
+        .search #search-bar:-ms-input-placeholder {
+          font-size: 17px; }
+        .search #search-bar::-ms-input-placeholder {
+          font-size: 17px; }
+        .search #search-bar::placeholder {
+          font-size: 17px; } }
 
 /* Lower third with weather information */
 .widget-weather {

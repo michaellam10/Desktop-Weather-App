@@ -6,6 +6,10 @@
   height: calc(100% / 3 * 2);
   min-height: 400px;
   position: relative;
+  
+  @media screen and (max-width: 500px) {
+    min-height: 300px;
+  }
 }
 
 .dashboard-header {
@@ -22,6 +26,10 @@
       
       @media screen and (max-width: 700px) {
         font-size: 40px;
+      }
+      
+      @media screen and (max-width: 500px) {
+        font-size: 35px;
       }
     }
   }
@@ -40,28 +48,32 @@
       right: 40px;
     }
     
+    i {
+      @media screen and (max-width: 500px) {
+        font-size: 2.5em;
+      }
+    }
+    
     h2 {
       font-size: 14px;
       font-weight: normal;
+      margin: 0;
+      
+      @media screen and (max-width: 500px) {
+        font-size: 13px;
+        line-height: 1.4;
+      }
     }
     
     .location-date {
       margin-top: 10px;
       margin-bottom: 2px;
       text-align: right;
-      
-      h2 {
-        margin: 0;
-      }
     }
     
     .location-time {
       margin-top: 2px;
       text-align: right;
-      
-      h2 {
-        margin: 0;
-      }
     }
   }
 }
@@ -110,6 +122,10 @@
       margin-top: 6px;
       font-weight: 300;
       font-size: 18px;
+      
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
 
     }
     
@@ -135,6 +151,10 @@
     width: 100%;
   }
   
+  @media screen and (max-width: 500px) {
+    height: 50px;
+  }
+  
   #search-bar {
     box-sizing: border-box;
     width: 100%;
@@ -158,6 +178,14 @@
     
     @media screen and (max-width: 1000px) {
       text-align: left;
+    }
+    
+    @media screen and (max-width: 500px) {
+      font-size: 17px;
+      
+      &::placeholder {
+        font-size: 17px;
+      }
     }
   }
 }
