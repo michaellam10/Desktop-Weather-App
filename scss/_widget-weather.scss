@@ -1,10 +1,7 @@
 /* Lower third with weather information */
 
 .widget-weather {
-  // height: calc(100% / 3);
-  // background-color: rgba(0,0,0,0.7);
-  // border-bottom-left-radius: 10px;
-  // border-bottom-right-radius: 10px;
+
   display: none;
    
    &.selected {
@@ -151,6 +148,10 @@
   .widget-weather {
     flex-direction: column;
     
+    @media screen and (max-width: 1000px) {
+      padding-bottom: 0 !important;
+    }
+    
     .today {
       width: 100%;
       padding-top: 50px;
@@ -167,9 +168,9 @@
       width: 100%;
       overflow-x: scroll;
       
-      @media screen and (max-width: 700px) {
-        flex-direction: column;
-      }
+      // @media screen and (max-width: 700px) {
+      //   flex-direction: column;
+      // }
       
       .other-day {
         border-left: 0;

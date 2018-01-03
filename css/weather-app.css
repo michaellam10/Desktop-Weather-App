@@ -489,7 +489,12 @@ h1 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column; } }
+  @media screen and (max-width: 1279px) and (max-width: 1000px) {
+    .widget-weather {
+      padding-bottom: 0 !important; } }
+
+@media screen and (max-width: 1279px) {
     .widget-weather .today {
       width: 100%;
       padding-top: 50px;
@@ -506,15 +511,7 @@ h1 {
       -ms-flex-pack: start;
       justify-content: flex-start;
       width: 100%;
-      overflow-x: scroll; } }
-    @media screen and (max-width: 1279px) and (max-width: 700px) {
-      .widget-weather .rest-of-week {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column; } }
-
-@media screen and (max-width: 1279px) {
+      overflow-x: scroll; }
       .widget-weather .rest-of-week .other-day {
         border-left: 0;
         border-top: solid 1px rgba(179, 179, 179, 0.4);
